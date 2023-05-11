@@ -1,6 +1,6 @@
 {
     "name": "Weslink ChatGPT",
-    "short_name": "ChatGPT",
+    "short_name": "WeslinkGPT",
     "icons": [
       {
         "src": "/android-chrome-192x192.png",
@@ -18,4 +18,3 @@
     "background_color": "#ffffff",
     "display": "standalone"
   }
-  
