@@ -9,6 +9,7 @@ export interface AccessControlStore {
 
   needCode: boolean;
   hideUserApiKey: boolean;
+  hideUsageCheck: boolean;
   openaiUrl: string;
 
   updateToken: (_: string) => void;
@@ -27,6 +28,7 @@ export const useAccessStore = create<AccessControlStore>()(
       accessCode: "",
       needCode: true,
       hideUserApiKey: false,
+      hideUsageCheck: false,
       openaiUrl: "/api/openai/",
 
       enabledAccessControl() {

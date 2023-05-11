@@ -8,6 +8,7 @@ declare global {
       PROXY_URL?: string;
       VERCEL?: string;
       HIDE_USER_API_KEY?: string; // disable user's api key input
+      HIDE_USER_USAGE_CHECK?: string; // disable user's usage check
     }
   }
 }
@@ -40,5 +41,6 @@ export const getServerSideConfig = () => {
     proxyUrl: process.env.PROXY_URL,
     isVercel: !!process.env.VERCEL,
     hideUserApiKey: !!process.env.HIDE_USER_API_KEY,
+    hideUsageCheck: !!process.env.HIDE_USER_USAGE_CHECK
   };
 };

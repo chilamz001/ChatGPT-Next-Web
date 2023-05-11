@@ -504,7 +504,7 @@ export function Settings() {
               />
             </ListItem>
           ) : null}
-
+          {!accessStore.hideUsageCheck ? (
           <ListItem
             title={Locale.Settings.Usage.Title}
             subTitle={
@@ -528,6 +528,7 @@ export function Settings() {
               />
             )}
           </ListItem>
+          ) : null}
         </List>
 
         <List>
