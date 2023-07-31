@@ -14,7 +14,6 @@ export interface AccessControlStore {
   hideBalanceQuery: boolean;
   disableGPT4: boolean;
 
-  hideUsageCheck: boolean;
   openaiUrl: string;
 
   updateToken: (_: string) => void;
@@ -42,7 +41,6 @@ export const useAccessStore = create<AccessControlStore>()(
       disableGPT4: false,
 
       openaiUrl: DEFAULT_OPENAI_URL,
-      hideUsageCheck: false,
 
       enabledAccessControl() {
         get().fetch();
