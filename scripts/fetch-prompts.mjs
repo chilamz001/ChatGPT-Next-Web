@@ -2,11 +2,16 @@ import fetch from "node-fetch";
 import fs from "fs/promises";
 
 const RAW_FILE_URL = "https://raw.githubusercontent.com/";
-const MIRRORF_FILE_URL = "http://raw.fgit.ml/";
+// const MIRRORF_FILE_URL = "http://raw.fgit.ml/";
 
-const RAW_CN_URL = "PlexPt/awesome-chatgpt-prompts-zh/main/prompts-zh.json";
+const MIRRORF_FILE_URL = "https://prompts.qsign.com.cn/";
+
+// const RAW_CN_URL = "PlexPt/awesome-chatgpt-prompts-zh/main/prompts-zh.json";
+const RAW_CN_URL = "prompts-zh.json";
 const CN_URL = MIRRORF_FILE_URL + RAW_CN_URL;
-const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
+// const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
+const RAW_EN_URL = "prompts-en.csv";
+// const RAW_EN_URL = "f/awesome-chatgpt-prompts/main/prompts.csv";
 const EN_URL = MIRRORF_FILE_URL + RAW_EN_URL;
 const FILE = "./public/prompts.json";
 
