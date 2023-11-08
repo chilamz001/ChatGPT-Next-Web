@@ -1,11 +1,11 @@
 import { SubmitKey } from "../store/config";
-import type { LocaleType } from "./index";
+import type { PartialLocaleType } from "./index";
 
-const cs: LocaleType = {
+const cs: PartialLocaleType = {
   WIP: "V přípravě...",
   Error: {
     Unauthorized:
-      "Neoprávněný přístup, zadejte přístupový kód na stránce nastavení.",
+      "Neoprávněný přístup, zadejte přístupový kód na [stránce](/#/auth) nastavení.",
   },
   ChatItem: {
     ChatItemCount: (count: number) => `${count} zpráv`,
@@ -61,34 +61,20 @@ const cs: LocaleType = {
   Settings: {
     Title: "Nastavení",
     SubTitle: "Všechna nastavení",
-    Actions: {
-      ClearAll: "Vymazat všechna data",
-      ResetAll: "Obnovit veškeré nastavení",
-      Close: "Zavřít",
-      ConfirmResetAll: "Jste si jisti, že chcete obnovit všechna nastavení?",
-      ConfirmClearAll: "Jste si jisti, že chcete smazat všechna data?",
-    },
+
     Lang: {
       Name: "Language", // ATTENTION: if you wanna add a new translation, please do not translate this value, leave it as `Language`
-        All: "Všechny jazyky",
-        Options: {
-        cn: "简体中文",
-        en: "English",
-        tw: "繁體中文",
-        es: "Español",
-        it: "Italiano",
-        tr: "Türkçe",
-        jp: "日本語",
-        de: "Deutsch",
-        vi: "Vietnamese",
-        ru: "Русский",
-        cs: "Čeština",
-      },
+      All: "Všechny jazyky",
     },
     Avatar: "Avatar",
     FontSize: {
       Title: "Velikost písma",
       SubTitle: "Nastavení velikosti písma obsahu chatu",
+    },
+    InjectSystemPrompts: {
+      Title: "Vložit systémové prompty",
+      SubTitle:
+        "Vynutit přidání simulovaného systémového promptu ChatGPT na začátek seznamu zpráv každého požadavku",
     },
     Update: {
       Version: (x: string) => `Verze: ${x}`,
@@ -106,8 +92,10 @@ const cs: LocaleType = {
       SubTitle: "Zobrazit v náhledu bubliny",
     },
     Mask: {
-      Title: "Úvodní obrazovka Masek",
-      SubTitle: "Před zahájením nového chatu zobrazte úvodní obrazovku Masek",
+      Splash: {
+        Title: "Úvodní obrazovka Masek",
+        SubTitle: "Před zahájením nového chatu zobrazte úvodní obrazovku Masek",
+      },
     },
     Prompt: {
       Disable: {
@@ -164,10 +152,14 @@ const cs: LocaleType = {
       Title: "Max. počet tokenů",
       SubTitle: "Maximální délka vstupního tokenu a generovaných tokenů",
     },
-    PresencePenlty: {
+    PresencePenalty: {
       Title: "Přítomnostní korekce",
+      SubTitle: "Větší hodnota zvyšuje pravděpodobnost nových témat.",
+    },
+    FrequencyPenalty: {
+      Title: "Frekvenční penalizace",
       SubTitle:
-        "Větší hodnota zvyšuje pravděpodobnost nových témat.",
+        "Větší hodnota snižující pravděpodobnost opakování stejného řádku",
     },
   },
   Store: {
@@ -182,7 +174,7 @@ const cs: LocaleType = {
         "Vytvořte prosím název o čtyřech až pěti slovech vystihující průběh našeho rozhovoru bez jakýchkoli úvodních slov, interpunkčních znamének, uvozovek, teček, symbolů nebo dalšího textu. Odstraňte uvozovky.",
       Summarize:
         "Krátce shrň naši diskusi v rozsahu do 200 slov a použij ji jako podnět pro budoucí kontext.",
-      },
+    },
   },
   Copy: {
     Success: "Zkopírováno do schránky",
@@ -195,6 +187,9 @@ const cs: LocaleType = {
   },
   Plugin: {
     Name: "Plugin",
+  },
+  FineTuned: {
+    Sysmessage: "Jste asistent, který",
   },
   Mask: {
     Name: "Maska",
@@ -231,7 +226,7 @@ const cs: LocaleType = {
     More: "Najít více",
     NotShow: "Nezobrazovat znovu",
     ConfirmNoShow: "Potvrdit zakázání？Můžete jej povolit později v nastavení.",
-},
+  },
 
   UI: {
     Confirm: "Potvrdit",
@@ -239,7 +234,13 @@ const cs: LocaleType = {
     Close: "Zavřít",
     Create: "Vytvořit",
     Edit: "Upravit",
-  }
+  },
+  Exporter: {
+    Model: "Model",
+    Messages: "Zprávy",
+    Topic: "Téma",
+    Time: "Čas",
+  },
 };
 
 export default cs;

@@ -5,11 +5,15 @@ declare global {
     interface ProcessEnv {
       OPENAI_API_KEY?: string;
       CODE?: string;
+      BASE_URL?: string;
       PROXY_URL?: string;
       VERCEL?: string;
       HIDE_USER_API_KEY?: string; // disable user's api key input
       DISABLE_GPT4?: string; // allow user to use gpt-4 or not
-      HIDE_USER_USAGE_CHECK?: string; // disable user's usage check
+      BUILD_MODE?: "standalone" | "export";
+      BUILD_APP?: string; // is building desktop app
+      ENABLE_BALANCE_QUERY?: string; // allow user to query balance or not
+      DISABLE_FAST_LINK?: string; // disallow parse settings from url or not
     }
   }
 }
@@ -39,10 +43,12 @@ export const getServerSideConfig = () => {
     code: process.env.CODE,
     codes: ACCESS_CODES,
     needCode: ACCESS_CODES.size > 0,
+    baseUrl: process.env.BASE_URL,
     proxyUrl: process.env.PROXY_URL,
     isVercel: !!process.env.VERCEL,
     hideUserApiKey: !!process.env.HIDE_USER_API_KEY,
-    enableGPT4: !process.env.DISABLE_GPT4,
-    hideUsageCheck: !!process.env.HIDE_USER_USAGE_CHECK,
+    disableGPT4: !!process.env.DISABLE_GPT4,
+    hideBalanceQuery: !process.env.ENABLE_BALANCE_QUERY,
+    disableFastLink: !!process.env.DISABLE_FAST_LINK,
   };
 };
